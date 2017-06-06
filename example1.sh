@@ -145,13 +145,16 @@ print_loop() {
         loop_num=$1
         while [ $loop_num -ne 0 ]
         do
-                if [ 'expr $loop_num "/" 3' -eq 0 ]
+		cnum= expr $loop_num "-" 3
+		echo "beijign  =" $cnum
+                if [ $loop_num -eq 0 ]
                 then
                         echo "print_loop" $loop_num
-                        loop_num=$(( $loop_num -  1 ))
                 fi
-
+                loop_num=$(( $loop_num -  1 ))
         done
 }
 
 print_loop 5
+
+cmd= ls -l
